@@ -3,7 +3,7 @@
 	    border: none;
 	    padding: 0;
 	    margin: 0;
-	    background: #FFFFFF;
+	    background: #F8F9FA;
 	    color: #202020;
 	}
 
@@ -13,7 +13,11 @@
 	}
 
 	h1 {
-	    color: #404040;
+	    color: #000000;
+		border-bottom: 1px solid #dedede;
+		border-top: 1px solid #dedede;
+		padding-bottom: 5px;
+		padding-top: 5px;
 	}
 
 	#loading {
@@ -64,8 +68,8 @@
 	}
 
 	#startStopBtn.running {
-	    background-color: #FF3030;
-	    border-color: #FF6060;
+	    background-color: #2ab62b;
+	    border-color: #31bb31;
 	    color: #FFFFFF;
 	}
 
@@ -180,28 +184,36 @@
 	    height: auto;
 	    margin: 0.25em 0;
 	}
-
-	#privacyPolicy {
+	#privacy{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.header-container{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 10px;
+		margin-left: 3em;
+	}
+	.Policy {
 	    position: fixed;
 	    top: 2em;
-	    bottom: 2em;
-	    left: 2em;
 	    right: 2em;
-	    overflow-y: auto;
-	    width: auto;
-	    height: auto;
+	    width: 300px;
 	    box-shadow: 0 0 3em 1em #000000;
 	    z-index: 999999;
-	    text-align: left;
+	    text-align: right;
 	    background-color: #FFFFFF;
-	    padding: 1em;
+	    padding: 10px;
 	}
 
 	a.privacy {
-	    text-align: center;
+		display: inline-block;
+	    text-align: right;
 	    font-size: 0.8em;
 	    color: #808080;
 	    padding: 0 3em;
+		
 	}
 
 	div.closePrivacyPolicy {
@@ -262,7 +274,7 @@
 	    }
 
 	    h1 {
-	        color: #E0E0E0;
+	        color: #7b9bf8;
 	    }
 
 	    a {
@@ -276,4 +288,8 @@
 	    #resultsImg {
 	        filter: invert(1);
 	    }
+	}
+	#logo img{
+		height: 40px;
+		width: 200px;
 	}
