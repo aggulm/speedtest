@@ -5,6 +5,8 @@
 	    margin: 0;
 	    background: #F8F9FA;
 	    color: #202020;
+		background-image: url(image\ 3\ 1.png);
+
 	}
 
 	body {
@@ -50,10 +52,10 @@
 	#startStopBtn {
 	    display: inline-block;
 	    margin: 0 auto;
-	    color: #6060AA;
+	    color: #000000;
 	    background-color: rgba(0, 0, 0, 0);
-	    border: 0.15em solid #6060FF;
-	    border-radius: 0.3em;
+	    border: 0.18em solid #7796f2;
+	    border-radius: 0.36em;
 	    transition: all 0.3s;
 	    box-sizing: border-box;
 	    width: 8em;
@@ -68,8 +70,8 @@
 	}
 
 	#startStopBtn.running {
-	    background-color: #2ab62b;
-	    border-color: #31bb31;
+	    background-color: #b62a2a;
+	    border-color: #f22d27;
 	    color: #FFFFFF;
 	}
 
@@ -184,7 +186,7 @@
 	    height: auto;
 	    margin: 0.25em 0;
 	}
-	#privacy{
+	#rightSide{
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -215,7 +217,7 @@
 	    padding: 0 3em;
 		
 	}
-
+	
 	div.closePrivacyPolicy {
 	    width: 100%;
 	    text-align: center;
