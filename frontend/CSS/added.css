@@ -1,0 +1,73 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 1.5rem;
+}
+
+.footer-bar {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.bar-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background-color: #4a4b4b;
+    color: white;
+    padding: 0.5rem;
+    aspect-ratio: 1 / 1;
+    width: auto;
+    border-radius: 50%;
+}
+
+a i {
+    font-size: 20px;
+}
+
+#questionIcon:hover {
+    background-color: #0192e0;
+}
+
+.iconQuestion {
+    background-color: #0192e0;
+}
+
+#fbIcon:hover {
+    background-color: #385692;
+}
+
+#xIcon:hover {
+    background-color: black;
+}
+
+#inIcon:hover {
+    background-color: #0962bb;
+}
+
+.faq-content {
+    display: none;
+}
+
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 28rem;
+    margin: .5rem auto 3rem auto;
+    gap: 1rem;
+}
+
+.faq-item {
+    text-align: left;
+}
+
+.faq-item span {
+    display: block;
+}
