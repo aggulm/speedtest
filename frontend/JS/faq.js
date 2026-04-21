@@ -1,12 +1,22 @@
-let questionIcon = document.querySelector("#questionIcon");
-let faqSection = document.querySelector(".faq-content");
-function handleClick(e) {
-  faqSection.sty;
-}
-questionIcon.addEventListener("click", function (e) {
-  faqSection.classList.toggle("faq-section");
-});
+const questionIcon = document.querySelector("#questionIcon");
+const faqSection = document.querySelector(".faq-content");
+const faqCloseLink = document.querySelector("#faqCloseLink");
 
-questionIcon.addEventListener("click", function (e) {
-  questionIcon.classList.toggle("iconQuestion");
-});
+function setFaqState(isOpen) {
+  faqSection.classList.toggle("faq-section", isOpen);
+  questionIcon.classList.toggle("iconQuestion", isOpen);
+  faqSection.setAttribute("aria-hidden", String(!isOpen));
+}
+
+if (questionIcon && faqSection) {
+  questionIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    setFaqState(true);
+  });
+  if (faqCloseLink) {
+    faqCloseLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      setFaqState(false);
+    });
+  }
+}
