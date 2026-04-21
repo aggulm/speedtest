@@ -28,8 +28,7 @@
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
 </div>
 <div id="testWrapper" class="hidden">
-	<div id="startStopBtn" onclick="startStop()"></div><br/>
-	<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy</a>
+	<div id="startStopBtn" onclick="startStop()"></div>
 	<div id="serverArea">
 		Server: <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
 	</div>
@@ -68,30 +67,88 @@
 			<p>Test ID: <span id="testId"></span></p>
 			<input type="text" value="" id="resultsURL" readonly="readonly" onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')"/>
 			<img src="" id="resultsImg" />
-		</div>
-		<footer>
-        <div class="footer-container" id="footer">
-          <div class="footer-bar">
-            <a href="#footer" class="bar-icon" id="questionIcon">
+		</div> 
+	</div>
+  <!-- Card section -->
+  <section>
+    <div class="card-wrapper">
+      <div class="card-container">
+        <div class="card-item">
+          <div class="icon-container">
+            <a href="https://icta.az/media/faq" target="_blank">
+              <img src="./frontend//CSS//card icons/questionİcon.svg" alt="Tez-tez verilən suallar">
+            </a>
+          </div>
+          <div class="card-title">Tez-tez verilən suallar</div>
+        </div>
+        <div class="card-item">
+          <div class="icon-container">
+            <a href="https://icta.az/consumers/statistical-data" target="_blank">
+              <img src="./frontend//CSS//card icons/icon 2.svg" alt="Xidmət keyfiyyəti – rəqəmlərlə">
+            </a>
+          </div>
+          <div class="card-title">Xidmət keyfiyyəti – rəqəmlərlə</div>
+        </div>
+        <div class="card-item">
+          <div class="icon-container">
+            <a href="https://mygovid.gov.az/auth" target="_blank">
+              <img src="./frontend//CSS/card icons//icon 3.svg" alt="Şikayət və müraciətlər">
+            </a>
+          </div>
+          <div class="card-title">Şikayət və müraciətlər</div>
+        </div>
+        <div class="card-item">
+          <div class="icon-container">
+            <a href="https://icta.az/documents/WiFi%20Optimalla%C5%9Fd%C4%B1rma%20B%C9%99l%C9%99d%C3%A7isi%20v_3-b1.pdf" target="_blank">
+              <img src="./frontend/CSS//card icons/icon 4.svg" alt="WiFi Optimallaşdırma Bələdçisi">
+            </a>
+          </div>
+          <div class="card-title">WiFi Optimallaşdırma Bələdçisi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Icons bar section -->
+  		<section>
+        <div class="icons-container" id="icons">
+          <div class="icons-bar">
+            <a href="#" class="bar-icon" id="questionIcon">
               <i class="fa-solid fa-question icons"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@ictaazerbaijan" target="_blank" class="bar-icon" id="ytIcon">
+              <i class="fa-brands fa-youtube"></i>
             </a>
 
             <a href="https://www.facebook.com/ictaazerbaijan" target="_blank" class="bar-icon" id="fbIcon">
               <i class="fa-brands fa-facebook-f icons"></i>
             </a>
 
+            <a href="https://az.linkedin.com/company/ictaazerbaijan" target="_blank" class="bar-icon" id="inIcon">
+              <i class="fa-brands fa-linkedin-in icons"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@ictaazerbaijan" target="_blank" class="bar-icon" id="ttIcon">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+
             <a href="https://x.com/ictaazerbaijan" target="_blank" class="bar-icon" id="xIcon">
               <i class="fa-brands fa-x-twitter icons"></i>
             </a>
 
-            <a href="https://az.linkedin.com/company/ictaazerbaijan" target="_blank" class="bar-icon" id="inIcon">
-              <i class="fa-brands fa-linkedin-in icons"></i>
-            </a>
+           <a href="https://www.instagram.com/ictaazerbaijan/" target="_blank" class="bar-icon" id="igIcon">
+            <i class="fa-brands fa-instagram"></i>
+           </a>
           </div>
         </div>
         <section id="faqSection" class="faq-container">
-          <div class="faq-content">
-            <div class="faq-item">
+          <div class="faq-content" role="dialog" aria-labelledby="faqTitle" aria-hidden="true">
+            <div class="faq-header">
+              <h2 id="faqTitle">Tez-tez verilən suallar</h2>
+              <a href="#icons" id="faqCloseLink" class="faq-close-link" aria-label="Faq bolmesini bagla">Bağla</a>
+            </div>
+          <div class="faq-body">
+          <div class="faq-item">
               <strong>Lorem, ipsum dolor?</strong>
               <span>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora laborum recusandae in eius
@@ -147,10 +204,18 @@
                 similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
               </span>
             </div>
+            </div>
+           
           </div>
         </section>
-      </footer>
-	</div>
+    </section>
+  <footer>
+        <div class="bottom-container">
+          <div class="bottom">
+            © 2026 İnformasiya Kommunikasiya Texnologiyaları Agentliyi. Bütün hüquqlar qorunur! 
+          </div>
+        </div>
+  </footer>
 </div>
 <div id="privacyPolicy" style="display:none">
     <h2>Privacy Policy</h2>
@@ -197,5 +262,6 @@
 <script  src="./frontend/JS/speedtest.js"></script>
 <script  src="./frontend/JS/previous.js"></script>
 <script src="./frontend/JS/faq.js"></script>
+
 </body>
 </html>
