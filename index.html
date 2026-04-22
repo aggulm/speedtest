@@ -1,115 +1,134 @@
 <!doctype html>
 <html>
-<head>
-<link rel="shortcut icon" href="favicon.ico">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
-<meta charset="UTF-8" />
-<link rel="stylesheet" href="./frontend/CSS/previous.css">
-<link rel="stylesheet" href="./frontend//CSS//added.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./frontend/CSS/previous.css" />
+    <link rel="stylesheet" href="./frontend//CSS//added.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <title>LibreSpeed Speedtest</title>
+  </head>
 
-
-<title>LibreSpeed Speedtest</title>
-</head>
-<body onload="initServers()">
-	<header>
-	<div class="header-container">
-		
-		<div id="logo">
-			<a  href="https://icta.az/" target="_blank"><img src="./frontend/CSS/ictaalogo.svg" /></a>
-		</div>
-		<div id="rightSide">
-			<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy</a>
-		</div>
-	</div>
-	</header>
-<h1>LibreSpeed Speedtest</h1>
-<div id="loading" class="visible">
-	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
-</div>
-<div id="testWrapper" class="hidden">
-	<div id="startStopBtn" onclick="startStop()"></div>
-	<div id="serverArea">
-		Server: <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
-	</div>
-	<div id="test">
-		<div class="testGroup">
-            <div class="testArea2">
-				<div class="testName">Ping</div>
-				<div id="pingText" class="meterText" style="color:#AA6060"></div>
-				<div class="unit">ms</div>
-			</div>
-			<div class="testArea2">
-				<div class="testName">Jitter</div>
-				<div id="jitText" class="meterText" style="color:#AA6060"></div>
-				<div class="unit">ms</div>
-			</div>
-		</div>
-		<div class="testGroup">
-			<div class="testArea">
-				<div class="testName">Download</div>
-				<canvas id="dlMeter" class="meter"></canvas>
-				<div id="dlText" class="meterText"></div>
-				<div class="unit">Mbit/s</div>
-			</div>
-			<div class="testArea">
-				<div class="testName">Upload</div>
-				<canvas id="ulMeter" class="meter"></canvas>
-				<div id="ulText" class="meterText"></div>
-				<div class="unit">Mbit/s</div>
-			</div>
-		</div>
-		<div id="ipArea">
-			<span id="ip"></span>
-		</div>
-		<div id="shareArea" style="display:none">
-			<h3>Share results</h3>
-			<p>Test ID: <span id="testId"></span></p>
-			<input type="text" value="" id="resultsURL" readonly="readonly" onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')"/>
-			<img src="" id="resultsImg" />
-		</div> 
-	</div>
-  <!-- Card section -->
-  <section>
-    <div class="card-wrapper">
-      <div class="card-container">
-        <div class="card-item">
-          <div class="icon-container">
-            <a href="https://icta.az/media/faq" target="_blank">
-              <img src="./frontend//CSS//card icons/questionİcon.svg" alt="Tez-tez verilən suallar">
-            </a>
-          </div>
-          <div class="card-title">Tez-tez verilən suallar</div>
+  <body onload="initServers()">
+    <header>
+      <div class="header-container">
+        <div id="logo">
+          <a href="https://icta.az/" target="_blank"><img src="./frontend/CSS/ictaalogo.svg" /></a>
         </div>
-        <div class="card-item">
-          <div class="icon-container">
-            <a href="https://icta.az/consumers/statistical-data" target="_blank">
-              <img src="./frontend//CSS//card icons/icon 2.svg" alt="Xidmət keyfiyyəti – rəqəmlərlə">
-            </a>
-          </div>
-          <div class="card-title">Xidmət keyfiyyəti – rəqəmlərlə</div>
-        </div>
-        <div class="card-item">
-          <div class="icon-container">
-            <a href="https://mygovid.gov.az/auth" target="_blank">
-              <img src="./frontend//CSS/card icons//icon 3.svg" alt="Şikayət və müraciətlər">
-            </a>
-          </div>
-          <div class="card-title">Şikayət və müraciətlər</div>
-        </div>
-        <div class="card-item">
-          <div class="icon-container">
-            <a href="https://icta.az/documents/WiFi%20Optimalla%C5%9Fd%C4%B1rma%20B%C9%99l%C9%99d%C3%A7isi%20v_3-b1.pdf" target="_blank">
-              <img src="./frontend/CSS//card icons/icon 4.svg" alt="WiFi Optimallaşdırma Bələdçisi">
-            </a>
-          </div>
-          <div class="card-title">WiFi Optimallaşdırma Bələdçisi</div>
+        <div id="rightSide">
+          <a class="privacy" href="#" onclick="I('privacyPolicy').style.display = ''">Privacy</a>
         </div>
       </div>
+    </header>
+    <h1>İnternet Sürət Testi</h1>
+    <div id="loading" class="visible">
+      <p id="message">
+        <span class="loadCircle"></span>
+        Selecting a server...
+      </p>
     </div>
-  </section>
-  <!-- Icons bar section -->
-  		<section>
+    <div id="testWrapper" class="hidden">
+      <div id="startStopBtn" onclick="startStop()"></div>
+      <div id="serverArea">
+        Server:
+        <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
+      </div>
+      <div id="test">
+        <div class="testGroup">
+          <div class="testArea2">
+            <div class="testName">Ping</div>
+            <div id="pingText" class="meterText" style="color: #c30000"></div>
+            <div class="unit">ms</div>
+          </div>
+          <div class="testArea">
+            <div class="testName">Download</div>
+            <canvas id="dlMeter" class="meter"></canvas>
+            <div id="dlText" class="meterText" style="color: #7294f2"></div>
+            <div class="unit">Mbit/s</div>
+          </div>
+
+          <div class="testArea">
+            <div class="testName">Upload</div>
+            <canvas id="ulMeter" class="meter"></canvas>
+            <div id="ulText" class="meterText" style="color: #7294f2"></div>
+            <div class="unit">Mbit/s</div>
+          </div>
+          <div class="testArea2">
+            <div class="testName">Jitter</div>
+            <div id="jitText" class="meterText" style="color: #c30000"></div>
+            <div class="unit">ms</div>
+          </div>
+        </div>
+        <div id="ipArea">
+          <span id="ip"></span>
+        </div>
+        <div id="shareArea" style="display: none">
+          <h3>Share results</h3>
+          <p>
+            Test ID:
+            <span id="testId"></span>
+          </p>
+          <input
+            type="text"
+            value=""
+            id="resultsURL"
+            readonly="readonly"
+            onclick="
+              this.select();
+              this.focus();
+              this.select();
+              document.execCommand('copy');
+              alert('Link copied');
+            "
+          />
+          <img src="" id="resultsImg" />
+        </div>
+      </div>
+      <!-- Card section -->
+      <section>
+        <div class="card-wrapper">
+          <div class="card-container">
+            <div class="card-item">
+              <div class="icon-container">
+                <a href="https://icta.az/media/faq" target="_blank">
+                  <img src="./frontend//CSS//card icons/questionİcon.svg" alt="Tez-tez verilən suallar" />
+                </a>
+              </div>
+              <div class="card-title">Tez-tez verilən suallar</div>
+            </div>
+            <div class="card-item">
+              <div class="icon-container">
+                <a href="https://icta.az/consumers/statistical-data" target="_blank">
+                  <img src="./frontend//CSS//card icons/icon 2.svg" alt="Xidmət keyfiyyəti – rəqəmlərlə" />
+                </a>
+              </div>
+              <div class="card-title">Xidmət keyfiyyəti – rəqəmlərlə</div>
+            </div>
+            <div class="card-item">
+              <div class="icon-container">
+                <a href="https://mygovid.gov.az/auth" target="_blank">
+                  <img src="./frontend//CSS/card icons//icon 3.svg" alt="Şikayət və müraciətlər" />
+                </a>
+              </div>
+              <div class="card-title">Şikayət və müraciətlər</div>
+            </div>
+            <div class="card-item">
+              <div class="icon-container">
+                <a
+                  href="https://icta.az/documents/WiFi%20Optimalla%C5%9Fd%C4%B1rma%20B%C9%99l%C9%99d%C3%A7isi%20v_3-b1.pdf"
+                  target="_blank"
+                >
+                  <img src="./frontend/CSS//card icons/icon 4.svg" alt="WiFi Optimallaşdırma Bələdçisi" />
+                </a>
+              </div>
+              <div class="card-title">WiFi Optimallaşdırma Bələdçisi</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Icons bar section -->
+      <section>
         <div class="icons-container" id="icons">
           <div class="icons-bar">
             <a href="#" class="bar-icon" id="questionIcon">
@@ -136,9 +155,9 @@
               <i class="fa-brands fa-x-twitter icons"></i>
             </a>
 
-           <a href="https://www.instagram.com/ictaazerbaijan/" target="_blank" class="bar-icon" id="igIcon">
-            <i class="fa-brands fa-instagram"></i>
-           </a>
+            <a href="https://www.instagram.com/ictaazerbaijan/" target="_blank" class="bar-icon" id="igIcon">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
           </div>
         </div>
         <section id="faqSection" class="faq-container">
@@ -147,121 +166,123 @@
               <h2 id="faqTitle">Tez-tez verilən suallar</h2>
               <a href="#icons" id="faqCloseLink" class="faq-close-link" aria-label="Faq bolmesini bagla">Bağla</a>
             </div>
-          <div class="faq-body">
-          <div class="faq-item">
-              <strong>Lorem, ipsum dolor?</strong>
-              <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora laborum recusandae in eius
-                exercitationem doloribus, fuga delectus sed sit earum quidem architecto consequatur dolor.
-              </span>
+            <div class="faq-body">
+              <div class="faq-item">
+                <strong>Lorem, ipsum dolor?</strong>
+                <span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora laborum recusandae in eius
+                  exercitationem doloribus, fuga delectus sed sit earum quidem architecto consequatur dolor.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Lorem ipsum dolor sit?</strong>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti nisi facilis ipsum
+                  similique maiores. Deserunt magnam sequi tempora numquam maxime quas quam illo! Reprehenderit,
+                  praesentium.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Lorem dolor Sit?</strong>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus nisi facilis ipsum similique
+                  maiores.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Lorem ipsum sit?</strong>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Lorem İpsum sit?</strong>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Lorem ipsum Sit?</strong>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Lorem ipsum sit?</strong>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+                </span>
+              </div>
+              <div class="faq-item">
+                <strong>Lorem İpsum sit?</strong>
+                <span>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+                </span>
+              </div>
             </div>
-            <div class="faq-item">
-              <strong>Lorem ipsum dolor sit?</strong>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti nisi facilis ipsum similique
-                maiores. Deserunt magnam sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-              </span>
-            </div>
-            <div class="faq-item">
-              <strong>Lorem dolor Sit?</strong>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus nisi facilis ipsum similique
-                maiores.
-              </span>
-            </div>
-            <div class="faq-item">
-              <strong>Lorem ipsum sit?</strong>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-              </span>
-            </div>
-            <div class="faq-item">
-              <strong>Lorem İpsum sit?</strong>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-              </span>
-            </div>
-            <div class="faq-item">
-              <strong>Lorem ipsum Sit?</strong>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-              </span>
-            </div>
-            <div class="faq-item">
-              <strong>Lorem ipsum sit?</strong>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-              </span>
-            </div>
-            <div class="faq-item">
-              <strong>Lorem İpsum sit?</strong>
-              <span>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-              </span>
-            </div>
-            </div>
-           
           </div>
         </section>
-    </section>
-  <footer>
-        <div class="bottom-container">
-          <div class="bottom">
-            © 2026 İnformasiya Kommunikasiya Texnologiyaları Agentliyi. Bütün hüquqlar qorunur! 
-          </div>
-        </div>
-  </footer>
-</div>
-<div id="privacyPolicy" style="display:none">
-    <h2>Privacy Policy</h2>
-    <p>This HTML5 speed test server is configured with telemetry enabled.</p>
-    <h4>What data we collect</h4>
-    <p>
+      </section>
+    </div>
+    <footer>
+      <div class="bottom-container">
+        <div class="bottom">© 2026 İnformasiya Kommunikasiya Texnologiyaları Agentliyi. Bütün hüquqlar qorunur!</div>
+      </div>
+    </footer>
+    <div id="privacyPolicy" class="privacyP" style="display: none">
+      <h2>Privacy Policy</h2>
+      <p>This HTML5 speed test server is configured with telemetry enabled.</p>
+      <h4>What data we collect</h4>
+      <div>
         At the end of the test, the following data is collected and stored:
         <ul>
-            <li>Test ID</li>
-            <li>Time of testing</li>
-            <li>Test results (download and upload speed, ping and jitter)</li>
-            <li>IP address</li>
-            <li>ISP information</li>
-            <li>Approximate location (inferred from IP address, not GPS)</li>
-            <li>User agent and browser locale</li>
-            <li>Test log (contains no personal information)</li>
+          <li>Test ID</li>
+          <li>Time of testing</li>
+          <li>Test results (download and upload speed, ping and jitter)</li>
+          <li>IP address</li>
+          <li>ISP information</li>
+          <li>Approximate location (inferred from IP address, not GPS)</li>
+          <li>User agent and browser locale</li>
+          <li>Test log (contains no personal information)</li>
         </ul>
-    </p>
-    <h4>How we use the data</h4>
-    <p>
+      </div>
+      <h4>How we use the data</h4>
+      <div>
         Data collected through this service is used to:
         <ul>
-            <li>Allow sharing of test results (sharable image for forums, etc.)</li>
-            <li>To improve the service offered to you (for instance, to detect problems on our side)</li>
+          <li>Allow sharing of test results (sharable image for forums, etc.)</li>
+          <li>To improve the service offered to you (for instance, to detect problems on our side)</li>
         </ul>
         No personal information is disclosed to third parties.
-    </p>
-    <h4>Your consent</h4>
-    <p>
-        By starting the test, you consent to the terms of this privacy policy.
-    </p>
-    <h4>Data removal</h4>
-    <p>
-        If you want to have your information deleted, you need to provide either the ID of the test or your IP address. This is the only way to identify your data, without this information we won't be able to comply with your request.<br/><br/>
-        Contact this email address for all deletion requests: <a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>.
-    </p>
-    <br/><br/>
-    <div class="closePrivacyPolicy">
-        <a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">Close</a>
+      </div>
+      <h4>Your consent</h4>
+      <p>By starting the test, you consent to the terms of this privacy policy.</p>
+      <h4>Data removal</h4>
+      <p>
+        If you want to have your information deleted, you need to provide either the ID of the test or your IP address.
+        This is the only way to identify your data, without this information we won't be able to comply with your
+        request.
+        <br />
+        <br />
+        Contact this email address for all deletion requests:
+        <a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>
+        .
+      </p>
+      <br />
+      <br />
+      <div class="closePrivacyPolicy">
+        <a class="privacy" href="#" onclick="I('privacyPolicy').style.display = 'none'">Close</a>
+      </div>
+      <br />
     </div>
-    <br/>
-</div>
 
-<script  src="./frontend/JS/speedtest.js"></script>
-<script  src="./frontend/JS/previous.js"></script>
-<script src="./frontend/JS/faq.js"></script>
-
-</body>
+    <script src="./frontend/JS/speedtest.js"></script>
+    <script src="./frontend/JS/previous.js"></script>
+    <script src="./frontend/JS/faq.js"></script>
+  </body>
 </html>
