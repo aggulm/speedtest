@@ -232,18 +232,16 @@
 		border-radius: .75rem;
 	}
 
-	#privacyBtn {
+	.privacyBtn {
 		color: #000000;
-		font-size: 16px;
 		text-decoration: none;
-		padding: 5px 10px;
 		border: none;
 		background: none;
 		transition: all 0.2s ease;
 		display: inline-block;
 	}
 
-	#privacyBtn:hover {
+	.privacyBtn:hover {
 		color: #5182f5;
 	}
 
