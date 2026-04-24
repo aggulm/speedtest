@@ -50,7 +50,7 @@
 		display: inline-block;
 		margin: 0 auto;
 		color: #ffffff;
-		background-color: #003d7a;
+		background-color: #5182f5;
 		border: none;
 		border-radius: 0.36em;
 		transition: all 0.3s;
@@ -64,7 +64,7 @@
 	}
 
 	#startStopBtn:hover {
-		background-color: #01284f;
+		background-color: #3d6cdb;
 		box-shadow: 0 6px 20px #0052a266;
 		transform: translateY(-2px);
 	}
@@ -93,7 +93,7 @@
 	}
 
 	#test {
-		margin-top: 2em;
+		margin-top: 2cm;
 	}
 
 	div.testArea {
@@ -230,6 +230,21 @@
 	.privacy-body::-webkit-scrollbar-thumb {
 		background-color: #cfd6de;
 		border-radius: .75rem;
+	}
+
+	#privacyBtn {
+		color: #000000;
+		font-size: 16px;
+		text-decoration: none;
+		padding: 5px 10px;
+		border: none;
+		background: none;
+		transition: all 0.2s ease;
+		display: inline-block;
+	}
+
+	#privacyBtn:hover {
+		color: #5182f5;
 	}
 
 	.privacy-header {
