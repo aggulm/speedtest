@@ -17,74 +17,77 @@
           <a href="https://icta.az/" target="_blank"><img src="./frontend/CSS/ictaalogo.svg" /></a>
         </div>
         <div id="rightSide">
-          <a class="privacy" href="#" onclick="I('privacyPolicy').style.display = ''">Privacy</a>
+          <a class="privacy" id="privacyOpenLink" href="#">Privacy</a>
         </div>
       </div>
     </header>
-    <h1>İnternet Sürət Testi</h1>
-    <div id="loading" class="visible">
-      <p id="message">
-        <span class="loadCircle"></span>
-        Selecting a server...
-      </p>
-    </div>
-    <div id="testWrapper" class="hidden">
-      <div id="startStopBtn" onclick="startStop()"></div>
-      <div id="serverArea">
-        Server:
-        <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
+    <main>
+      <h1>İnternet Sürət Testi</h1>
+      <div id="loading" class="visible">
+        <p id="message">
+          <span class="loadCircle"></span>
+          Selecting a server...
+        </p>
       </div>
-      <div id="test">
-        <div class="testGroup">
-          <div class="testArea2">
-            <div class="testName">Ping</div>
-            <div id="pingText" class="meterText" style="color: #c30000"></div>
-            <div class="unit">ms</div>
-          </div>
-          <div class="testArea">
-            <div class="testName">Download</div>
-            <canvas id="dlMeter" class="meter"></canvas>
-            <div id="dlText" class="meterText" style="color: #7294f2"></div>
-            <div class="unit">Mbit/s</div>
-          </div>
+      <div id="testWrapper" class="hidden">
+        <div id="startStopBtn" onclick="startStop()"></div>
+        <div id="serverArea">
+          Server:
+          <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
+        </div>
+        <div id="test">
+          <div class="testGroup">
+            <div class="testArea2">
+              <div class="testName">Ping</div>
+              <div id="pingText" class="meterText" style="color: #c30000"></div>
+              <div class="unit">ms</div>
+            </div>
+            <div class="testArea">
+              <div class="testName">Download</div>
+              <canvas id="dlMeter" class="meter"></canvas>
+              <div id="dlText" class="meterText" style="color: #7294f2"></div>
+              <div class="unit">Mbit/s</div>
+            </div>
 
-          <div class="testArea">
-            <div class="testName">Upload</div>
-            <canvas id="ulMeter" class="meter"></canvas>
-            <div id="ulText" class="meterText" style="color: #7294f2"></div>
-            <div class="unit">Mbit/s</div>
+            <div class="testArea">
+              <div class="testName">Upload</div>
+              <canvas id="ulMeter" class="meter"></canvas>
+              <div id="ulText" class="meterText" style="color: #7294f2"></div>
+              <div class="unit">Mbit/s</div>
+            </div>
+            <div class="testArea2">
+              <div class="testName">Jitter</div>
+              <div id="jitText" class="meterText" style="color: #c30000"></div>
+              <div class="unit">ms</div>
+            </div>
           </div>
-          <div class="testArea2">
-            <div class="testName">Jitter</div>
-            <div id="jitText" class="meterText" style="color: #c30000"></div>
-            <div class="unit">ms</div>
+          <div id="ipArea">
+            <span id="ip"></span>
           </div>
-        </div>
-        <div id="ipArea">
-          <span id="ip"></span>
-        </div>
-        <div id="shareArea" style="display: none">
-          <h3>Share results</h3>
-          <p>
-            Test ID:
-            <span id="testId"></span>
-          </p>
-          <input
-            type="text"
-            value=""
-            id="resultsURL"
-            readonly="readonly"
-            onclick="
-              this.select();
-              this.focus();
-              this.select();
-              document.execCommand('copy');
-              alert('Link copied');
-            "
-          />
-          <img src="" id="resultsImg" />
+          <div id="shareArea" style="display: none">
+            <h3>Share results</h3>
+            <p>
+              Test ID:
+              <span id="testId"></span>
+            </p>
+            <input
+              type="text"
+              value=""
+              id="resultsURL"
+              readonly="readonly"
+              onclick="
+                this.select();
+                this.focus();
+                this.select();
+                document.execCommand('copy');
+                alert('Link copied');
+              "
+            />
+            <img src="" id="resultsImg" />
+          </div>
         </div>
       </div>
+
       <!-- Card section -->
       <section>
         <div class="card-wrapper">
@@ -127,6 +130,7 @@
           </div>
         </div>
       </section>
+
       <!-- Icons bar section -->
       <section>
         <div class="icons-container" id="icons">
@@ -160,126 +164,133 @@
             </a>
           </div>
         </div>
-        <section id="faqSection" class="faq-container">
-          <div class="faq-content" role="dialog" aria-labelledby="faqTitle" aria-hidden="true">
-            <div class="faq-header">
-              <h2 id="faqTitle">Tez-tez verilən suallar</h2>
-              <a href="#icons" id="faqCloseLink" class="faq-close-link" aria-label="Faq bolmesini bagla">Bağla</a>
-            </div>
-            <div class="faq-body">
-              <div class="faq-item">
-                <strong>Lorem, ipsum dolor?</strong>
-                <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora laborum recusandae in eius
-                  exercitationem doloribus, fuga delectus sed sit earum quidem architecto consequatur dolor.
-                </span>
-              </div>
-              <div class="faq-item">
-                <strong>Lorem ipsum dolor sit?</strong>
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti nisi facilis ipsum
-                  similique maiores. Deserunt magnam sequi tempora numquam maxime quas quam illo! Reprehenderit,
-                  praesentium.
-                </span>
-              </div>
-              <div class="faq-item">
-                <strong>Lorem dolor Sit?</strong>
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus nisi facilis ipsum similique
-                  maiores.
-                </span>
-              </div>
-              <div class="faq-item">
-                <strong>Lorem ipsum sit?</strong>
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-                </span>
-              </div>
-              <div class="faq-item">
-                <strong>Lorem İpsum sit?</strong>
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-                </span>
-              </div>
-              <div class="faq-item">
-                <strong>Lorem ipsum Sit?</strong>
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-                </span>
-              </div>
-              <div class="faq-item">
-                <strong>Lorem ipsum sit?</strong>
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-                </span>
-              </div>
-              <div class="faq-item">
-                <strong>Lorem İpsum sit?</strong>
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
-                  similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
       </section>
-    </div>
+    </main>
+
     <footer>
       <div class="bottom-container">
         <div class="bottom">© 2026 İnformasiya Kommunikasiya Texnologiyaları Agentliyi. Bütün hüquqlar qorunur!</div>
       </div>
     </footer>
-    <div id="privacyPolicy" class="privacyP" style="display: none">
-      <h2>Privacy Policy</h2>
-      <p>This HTML5 speed test server is configured with telemetry enabled.</p>
-      <h4>What data we collect</h4>
-      <div>
-        At the end of the test, the following data is collected and stored:
-        <ul>
-          <li>Test ID</li>
-          <li>Time of testing</li>
-          <li>Test results (download and upload speed, ping and jitter)</li>
-          <li>IP address</li>
-          <li>ISP information</li>
-          <li>Approximate location (inferred from IP address, not GPS)</li>
-          <li>User agent and browser locale</li>
-          <li>Test log (contains no personal information)</li>
-        </ul>
+
+    <!-- Faq section -->
+    <section id="faqSection" class="faq-container">
+      <div class="faq-content" role="dialog" aria-labelledby="faqTitle" aria-hidden="true">
+        <div class="faq-header">
+          <h2 id="faqTitle">Tez-tez verilən suallar</h2>
+          <a href="#icons" id="faqCloseLink" class="faq-close-link" aria-label="Faq bolmesini bagla">Bağla</a>
+        </div>
+        <div class="faq-body">
+          <div class="faq-item">
+            <strong>Lorem, ipsum dolor?</strong>
+            <span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora laborum recusandae in eius
+              exercitationem doloribus, fuga delectus sed sit earum quidem architecto consequatur dolor.
+            </span>
+          </div>
+          <div class="faq-item">
+            <strong>Lorem ipsum dolor sit?</strong>
+            <span>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti nisi facilis ipsum similique
+              maiores. Deserunt magnam sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+            </span>
+          </div>
+          <div class="faq-item">
+            <strong>Lorem dolor Sit?</strong>
+            <span>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus nisi facilis ipsum similique
+              maiores.
+            </span>
+          </div>
+          <div class="faq-item">
+            <strong>Lorem ipsum sit?</strong>
+            <span>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+              similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+            </span>
+          </div>
+          <div class="faq-item">
+            <strong>Lorem İpsum sit?</strong>
+            <span>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+              similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+            </span>
+          </div>
+          <div class="faq-item">
+            <strong>Lorem ipsum Sit?</strong>
+            <span>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+              similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+            </span>
+          </div>
+          <div class="faq-item">
+            <strong>Lorem ipsum sit?</strong>
+            <span>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+              similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+            </span>
+          </div>
+          <div class="faq-item">
+            <strong>Lorem İpsum sit?</strong>
+            <span>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti ducimus nisi facilis ipsum
+              similique maiores. Deserunt sequi tempora numquam maxime quas quam illo! Reprehenderit, praesentium.
+            </span>
+          </div>
+        </div>
       </div>
-      <h4>How we use the data</h4>
-      <div>
-        Data collected through this service is used to:
-        <ul>
-          <li>Allow sharing of test results (sharable image for forums, etc.)</li>
-          <li>To improve the service offered to you (for instance, to detect problems on our side)</li>
-        </ul>
-        No personal information is disclosed to third parties.
+    </section>
+
+    <!-- Privacy section -->
+    <section>
+      <div id="privacyPolicy" class="privacyP" aria-hidden="true">
+        <div class="privacy-header">
+          <h2>Privacy Policy</h2>
+          <a class="privacy" id="closeBtn" href="#">Bağla</a>
+        </div>
+        <div class="privacy-body">
+          <p>This HTML5 speed test server is configured with telemetry enabled.</p>
+          <h4>What data we collect</h4>
+          <div>
+            At the end of the test, the following data is collected and stored:
+            <ul>
+              <li>Test ID</li>
+              <li>Time of testing</li>
+              <li>Test results (download and upload speed, ping and jitter)</li>
+              <li>IP address</li>
+              <li>ISP information</li>
+              <li>Approximate location (inferred from IP address, not GPS)</li>
+              <li>User agent and browser locale</li>
+              <li>Test log (contains no personal information)</li>
+            </ul>
+          </div>
+          <h4>How we use the data</h4>
+          <div>
+            Data collected through this service is used to:
+            <ul>
+              <li>Allow sharing of test results (sharable image for forums, etc.)</li>
+              <li>To improve the service offered to you (for instance, to detect problems on our side)</li>
+            </ul>
+            No personal information is disclosed to third parties.
+          </div>
+          <h4>Your consent</h4>
+          <p>By starting the test, you consent to the terms of this privacy policy.</p>
+          <h4>Data removal</h4>
+          <p>
+            If you want to have your information deleted, you need to provide either the ID of the test or your IP
+            address. This is the only way to identify your data, without this information we won't be able to comply
+            with your request.
+            <br />
+            <br />
+            Contact this email address for all deletion requests:
+            <a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>
+            .
+          </p>
+        </div>
       </div>
-      <h4>Your consent</h4>
-      <p>By starting the test, you consent to the terms of this privacy policy.</p>
-      <h4>Data removal</h4>
-      <p>
-        If you want to have your information deleted, you need to provide either the ID of the test or your IP address.
-        This is the only way to identify your data, without this information we won't be able to comply with your
-        request.
-        <br />
-        <br />
-        Contact this email address for all deletion requests:
-        <a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>
-        .
-      </p>
-      <br />
-      <br />
-      <div class="closePrivacyPolicy">
-        <a class="privacy" href="#" onclick="I('privacyPolicy').style.display = 'none'">Close</a>
-      </div>
-      <br />
-    </div>
+    </section>
+
+    <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
 
     <script src="./frontend/JS/speedtest.js"></script>
     <script src="./frontend/JS/previous.js"></script>
