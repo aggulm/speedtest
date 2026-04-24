@@ -14,7 +14,7 @@
 
 	h1 {
 		color: #000000;
-		border-bottom: 1px solid #dedede;
+		margin-top: 24px;
 		border-top: 1px solid #dedede;
 		padding-bottom: 5px;
 		padding-top: 5px;
@@ -51,7 +51,7 @@
 		display: inline-block;
 		margin: 0 auto;
 		color: #ffffff;
-		background-color: #003d7a;
+		background-color: #5182f5;
 		border: none;
 		border-radius: 0.36em;
 		transition: all 0.3s;
@@ -65,7 +65,7 @@
 	}
 
 	#startStopBtn:hover {
-		background-color: #01284f;
+		background-color: #3d6cdb;
 		box-shadow: 0 6px 20px #0052a266;
 		transform: translateY(-2px);
 	}
@@ -94,8 +94,7 @@
 	}
 
 	#test {
-		margin-top: 2em;
-		margin-bottom: 12em;
+		margin-top: 2cm;
 	}
 
 	div.testArea {
@@ -205,7 +204,7 @@
 		margin-top: 10px;
 		margin-left: 3em;
 	}
-
+	
 	.privacyP {
 
 
@@ -230,26 +229,18 @@
 
 	}
 
-
-	.Policy {
-		position: fixed;
-		top: 2em;
-		right: 2em;
-		width: 300px;
-		box-shadow: 0 0 3em 1em #000000;
-		z-index: 999999;
-		text-align: right;
-		background-color: #FFFFFF;
-		padding: 10px;
-	}
-
-	a.privacy {
+	#privacyBtn {
+		color: #000000;
+		font-size: 16px;
+		text-decoration:none ;
+		padding: 5px 10px;
+		border: none;
+		background: none;
+		transition: all 0.2s ease;
 		display: inline-block;
-		text-align: right;
-		font-size: 0.8em;
-		color: #808080;
-		padding: 0 3em;
-
+	}
+	#privacyBtn:hover{	
+		color: #5182f5;
 	}
 
 	div.closePrivacyPolicy {
