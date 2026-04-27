@@ -15,8 +15,7 @@
 	h1 {
 		color: #000000;
 		border-top: 1px solid #dedede;
-		padding-bottom: 5px;
-		padding-top: 10px;
+		padding: 50px 0px 30px 0px;
 	}
 
 	#loading {
@@ -106,8 +105,8 @@
 
 	div.testArea2 {
 		display: inline-block;
-		width: 20em;
-		height: 8em;
+		width: clamp(150px, 15vw + 1rem, 320px);
+		height: auto;
 		position: relative;
 		box-sizing: border-box;
 		text-align: center;
@@ -168,10 +167,8 @@
 	}
 
 	div.testGroup {
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-		margin: 0 auto;
+		display: grid;
+		place-items: center;
 		gap: 1em;
 	}
 
@@ -198,7 +195,7 @@
 	.header-container {
 		display: flex;
 		justify-content: space-between;
-		margin: 1rem 2rem 0 2rem
+		margin: 1rem 2rem 0 2rem;
 	}
 
 	.privacyP {
@@ -325,6 +322,109 @@
 	}
 
 	#logo img {
-		height: 40px;
-		width: 200px;
+		height: clamp(30px, 2vw + 20px, 40px);
+		width: clamp(150px, 10vw + 100px, 200px);
+	}
+
+
+	@media (max-width: 575px) {
+		.testGroup {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.download {
+			grid-row: 1;
+			grid-column: 1 / span 2;
+		}
+
+		.upload {
+			grid-row: 2;
+			grid-column: 1 / span 2;
+		}
+
+		.ping {
+			grid-row: 3;
+			grid-column: 1;
+		}
+
+		.jitter {
+			grid-row: 3;
+			grid-column: 2;
+		}
+
+		.header-container {
+			margin: 1rem 1rem 0 1rem;
+		}
+
+		.card-item {
+			margin: 0 auto;
+			width: 80% !important;
+
+		}
+
+		.privacyP,
+		.faq-content {
+			max-width: 80%;
+			max-height: 80vh !important;
+		}
+
+	}
+
+	@media (min-width: 576px) and (max-width: 1024px) {
+		.testGroup {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto;
+		}
+
+		.download {
+			order: 1;
+		}
+
+		.upload {
+			order: 2;
+		}
+
+		.ping {
+			order: 3;
+		}
+
+		.jitter {
+			order: 4;
+		}
+
+		div.testArea {
+			display: inline-block;
+			width: 300px;
+			height: 228px;
+			position: relative;
+			box-sizing: border-box;
+		}
+
+		.privacyP,
+		.faq-content {
+			max-width: 85%;
+		}
+
+	}
+
+	@media (min-width: 1025px) {
+		.testGroup {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		.ping {
+			order: 1;
+		}
+
+		.download {
+			order: 2;
+		}
+
+		.upload {
+			order: 3;
+		}
+
+		.jitter {
+			order: 4;
+		}
 	}
